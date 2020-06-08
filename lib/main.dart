@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'app_bar_contents/clock.dart';
+import 'app_bar_contents/date_time.dart';
 import './screen_01.dart';
 import './screen_02.dart';
 import './screen_03.dart';
@@ -36,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final _screens = <Widget>[Screen01(), Screen02(), Screen03(), Screen04()];
 
   void _onItemTapped(int index) {
-    print(index);
+    //print(index);
     setState(() {
       _selectedIndex = index;
     });
@@ -48,7 +49,13 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         leading: Clock(),
         centerTitle: false,
-        title: Text('time'),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text("Today's Discover"),
+            AppBarDate(),
+          ],
+        ),
       ),
       body: Center(
         child: _screens.elementAt(_selectedIndex),
@@ -56,13 +63,13 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.format_list_bulleted), title: Text('')),
+              icon: Icon(Icons.content_copy), title: Text('')),
           BottomNavigationBarItem(
               icon: Icon(Icons.format_list_bulleted), title: Text('')),
           BottomNavigationBarItem(
-              icon: Icon(Icons.format_list_bulleted), title: Text('')),
+              icon: Icon(Icons.notifications_none), title: Text('')),
           BottomNavigationBarItem(
-              icon: Icon(Icons.format_list_bulleted), title: Text(''))
+              icon: Icon(Icons.person_outline), title: Text(''))
         ],
         backgroundColor: Colors.grey[800],
         selectedItemColor: Colors.blue,
