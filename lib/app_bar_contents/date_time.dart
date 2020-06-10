@@ -12,6 +12,9 @@ class _AppBarDateState extends State<AppBarDate> {
 
   @override
   Widget build(BuildContext context) {
-    return Text(formattedDate);
+    return Text(
+      formattedDate,
+      style: TextStyle(color: Colors.blue),
+    );
   }
 }

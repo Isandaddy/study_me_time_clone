@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'me time clone',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -47,12 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.grey[50],
         leading: Clock(),
         centerTitle: false,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text("Today's Discover"),
+            Text(
+              "Today's Discover",
+              style: TextStyle(color: Colors.blue),
+            ),
             AppBarDate(),
           ],
         ),
@@ -71,7 +76,6 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
               icon: Icon(Icons.person_outline), title: Text(''))
         ],
-        backgroundColor: Colors.grey[800],
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.blue[100],
         onTap: _onItemTapped,
