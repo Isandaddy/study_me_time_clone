@@ -17,3 +17,12 @@ study01
 - 본문 스택에서 사진 스와이프의 구현을 어떻게 할지 고민...
 - https://mightytechno.com/flutter-tinder-swipe-cards/ 를 참조하여 일단 screen01에 구현
 - Draggable widget 사용
+
+## 20200612
+
+- splash screen android/ios
+- test image spiderman.png
+
+### ref
+
+- https://www.youtube.com/watch?v=6R5VEgUKiX8&t=376s
