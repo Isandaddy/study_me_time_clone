@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'app_bar_contents/clock.dart';
 import 'app_bar_contents/date_time.dart';
-import './screen_01.dart';
+import 'screen01/screen_01.dart';
 import './screen_02.dart';
 import './screen_03.dart';
 import './screen_04.dart';
@@ -48,6 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
+        bottom: PreferredSize(
+          child: Container(
+            constraints: BoxConstraints.expand(height: 50),
+          ),
+          preferredSize: Size(50, 50),
+        ),
         backgroundColor: Colors.grey[50],
         leading: Clock(),
         centerTitle: false,

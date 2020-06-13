@@ -26,3 +26,7 @@ study01
 ### ref
 
 - https://www.youtube.com/watch?v=6R5VEgUKiX8&t=376s
+
+## 20200613
+
+- appBar 수정, PreferredSize사용
