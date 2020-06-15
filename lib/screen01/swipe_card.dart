@@ -16,8 +16,8 @@ class SwipeCard extends StatelessWidget {
           'https://images.unsplash.com/photo-1524481905007-ea072534b820?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
           fit: BoxFit.fill,
         ),
-        width: 370,
-        height: 370,
+        width: 250,
+        height: 250,
       ),
     );
   }

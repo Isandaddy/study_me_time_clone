@@ -18,17 +18,22 @@ class Screen01 extends StatelessWidget {
                   Text(
                     'Title Text test test test!!!',
                     style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 25,
                     ),
                   ),
                   Text('Title Text2!!!',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 25,
+                      )),
+                  Text('---> test',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 15,
                       ))
                 ],
               )),
           Positioned(
-            top: 180,
+            top: 100,
             child: Draggable(
               childWhenDragging: Container(),
               feedback: SwipeCard(),

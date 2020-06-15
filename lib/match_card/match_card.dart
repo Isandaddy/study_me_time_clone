@@ -1,11 +1,7 @@
-class MatchCard {
-  int red_color = 0;
-  int green_color = 0;
-  int blue_color = 0;
+import 'package:freezed_annotation/freezed_annotation.dart';
+//import 'package:flutter/foundation.dart';
 
-  MatchCard(int red, int green, int blue) {
-    red_color = red;
-    green_color = green;
-    blue_color = blue;
-  }
+@freezed
+class MatchCard {
+  MatchCard({String id, String url});
 }
