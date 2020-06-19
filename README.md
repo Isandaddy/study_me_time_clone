@@ -30,3 +30,12 @@ study01
 ## 20200613
 
 - appBar 수정, PreferredSize사용
+
+## 20200614
+
+-android 태스트 디바이스 설정
+
+## 20200619
+
+- use Freezed, StateNotifier, Provider
+  Consumer사용으로 전역에서 상태를 사용하도록 했다.

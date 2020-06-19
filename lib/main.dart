@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
+import 'package:provider/provider.dart';
 import 'app_bar_contents/clock.dart';
 import 'app_bar_contents/date_time.dart';
+import 'model/model_state.dart';
 import 'screen01/screen_01.dart';
 import 'screen02/screen_02.dart';
 import './screen_03.dart';
@@ -14,15 +17,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'me time clone',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(),
-    );
+    return MultiProvider(
+        providers: [
+          StateNotifierProvider<ModelController, ModelState>(
+            create: (_) => ModelController(),
+          ),
+        ],
+        child: Consumer<ModelController>(builder: (context, value, _) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'me time clone',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+            ),
+            home: MyHomePage(),
+          );
+        }));
   }
 }
 
