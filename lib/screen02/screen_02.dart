@@ -18,7 +18,7 @@ class Screen02 extends StatelessWidget {
           itemCount: infos.length,
           itemBuilder: (_, index) {
             final info = infos[index];
-            return _buildCard(context, info);
+            return _buildColumn(context, info);
           },
         );
       },
@@ -26,11 +26,11 @@ class Screen02 extends StatelessWidget {
     );
   }
 
-  Widget _buildCard(BuildContext context, Info info) {
+  Widget _buildColumn(BuildContext context, Info info) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(info.city),
+        Text(info.location),
         Text(info.description),
         Text('---- ${info.id}'),
       ],

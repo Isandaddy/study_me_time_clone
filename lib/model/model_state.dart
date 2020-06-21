@@ -31,13 +31,13 @@ class ModelController extends StateNotifier<ModelState> with LocatorMixin {
       Info(
           id: '1',
           description: 'test',
-          city: 'suwon',
-          url: 'https://source.unsplash.com/category/nature/1600x900'),
+          location: 'suwon',
+          urls: 'https://source.unsplash.com/category/nature/1600x900'),
       Info(
           id: '2',
           description: 'test1',
-          city: 'tokyo',
-          url: 'https://source.unsplash.com/category/nature/1600x900'),
+          location: 'tokyo',
+          urls: 'https://source.unsplash.com/category/nature/1600x900'),
     ]);
   }
 }

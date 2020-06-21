@@ -9,8 +9,8 @@ abstract class Info with _$Info {
   const factory Info({
     String id,
     String description,
-    String city,
-    String url,
+    String location,
+    String urls,
   }) = InfoData;
 
   factory Info.fromJson(Map<String, dynamic> json) => _$InfoFromJson(json);

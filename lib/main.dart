@@ -23,17 +23,15 @@ class MyApp extends StatelessWidget {
             create: (_) => ModelController(),
           ),
         ],
-        child: Consumer<ModelController>(builder: (context, value, _) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: 'me time clone',
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
-              visualDensity: VisualDensity.adaptivePlatformDensity,
-            ),
-            home: MyHomePage(),
-          );
-        }));
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'me time clone',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
+          home: MyHomePage(),
+        ));
   }
 }
 

@@ -10,8 +10,8 @@ _$InfoData _$_$InfoDataFromJson(Map<String, dynamic> json) {
   return _$InfoData(
     id: json['id'] as String,
     description: json['description'] as String,
-    city: json['city'] as String,
-    url: json['url'] as String,
+    location: json['location'] as String,
+    urls: json['urls'] as String,
   );
 }
 
@@ -19,6 +19,6 @@ Map<String, dynamic> _$_$InfoDataToJson(_$InfoData instance) =>
     <String, dynamic>{
       'id': instance.id,
       'description': instance.description,
-      'city': instance.city,
-      'url': instance.url,
+      'location': instance.location,
+      'urls': instance.urls,
     };
