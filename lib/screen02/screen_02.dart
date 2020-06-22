@@ -30,9 +30,27 @@ class Screen02 extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(info.location),
-        Text(info.description),
-        Text('---- ${info.id}'),
+        Text(
+          'country: ${info.location.country}',
+          style: TextStyle(
+            fontSize: 25,
+          ),
+        ),
+        Text(
+          'description: ${info.description}',
+          style: TextStyle(
+            fontSize: 25,
+          ),
+        ),
+        Text(
+          'city: ${info.location.city}',
+          style: TextStyle(
+            color: Colors.grey,
+          ),
+        ),
+        SizedBox(
+          height: 15,
+        ),
       ],
     );
   }

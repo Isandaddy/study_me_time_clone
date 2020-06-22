@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart'; // *.freezed.dartで必要なのでimportしておく
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:state_notifier/state_notifier.dart';
-//import 'package:study01/api/fetch_api.dart';
+import 'package:study01/api/fetch_api.dart';
 import 'package:study01/model/info.dart';
 
 part 'model_state.freezed.dart';
@@ -17,27 +17,15 @@ abstract class ModelState with _$ModelState {
 class ModelController extends StateNotifier<ModelState> with LocatorMixin {
   ModelController() : super(const ModelState.loading());
 
-  Future<Info> infoFuture;
+  List<Info> infoFuture;
 
   @override
   void initState() async {
     super.initState();
-    await Future<void>.delayed(const Duration(seconds: 3));
-    //infoFuture = fetchApi();
+    infoFuture = await fetchApi();
     //print(infoFuture);
 
     //test용 moc
-    state = ModelState(infos: [
-      Info(
-          id: '1',
-          description: 'test',
-          location: 'suwon',
-          urls: 'https://source.unsplash.com/category/nature/1600x900'),
-      Info(
-          id: '2',
-          description: 'test1',
-          location: 'tokyo',
-          urls: 'https://source.unsplash.com/category/nature/1600x900'),
-    ]);
+    state = ModelState(infos: infoFuture);
   }
 }

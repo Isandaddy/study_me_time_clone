@@ -39,3 +39,7 @@ study01
 
 - use Freezed, StateNotifier, Provider
   Consumer사용으로 전역에서 상태를 사용하도록 했다.
+
+## 20200622
+
+- unsplash API사용 fetch_api와 model_state수정
