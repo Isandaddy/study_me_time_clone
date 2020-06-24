@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:study01/constant/constant.dart';
 
 class AppBarDate extends StatefulWidget {
   //DateTime now = DateTime.now();
@@ -14,7 +15,7 @@ class _AppBarDateState extends State<AppBarDate> {
   Widget build(BuildContext context) {
     return Text(
       formattedDate,
-      style: TextStyle(color: Colors.blue),
+      style: appBarDateStyle,
     );
   }
 }

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'constant/constant.dart';
+
 class Screen03 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('screen03',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+      child: Text('通知はありません', style: screen3TextStyle),
     );
   }
 }

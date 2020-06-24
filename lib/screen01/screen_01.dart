@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study01/constant/constant.dart';
 import './swipe_card.dart';
 //import 'match_card/match_card.dart';
 
@@ -14,18 +15,14 @@ class Screen01 extends StatelessWidget {
               left: 10,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Text(
-                    'Title Text test test test!!!',
-                    style: TextStyle(
-                      fontSize: 25,
-                    ),
+                    'unsplash random image test!!!',
+                    style: screenTextStyle,
                   ),
-                  Text('Title Text2!!!',
-                      style: TextStyle(
-                        fontSize: 25,
-                      )),
-                  Text('---> test',
+                  Text('description', style: screenTextStyle),
+                  Text('---> city',
                       style: TextStyle(
                         color: Colors.blue,
                         fontSize: 15,

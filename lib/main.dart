@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
+import 'package:study01/constant/constant.dart';
 import 'app_bar_contents/clock.dart';
 import 'app_bar_contents/date_time.dart';
 import 'model/model_state.dart';
@@ -60,9 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
         elevation: 0.0,
         bottom: PreferredSize(
           child: Container(
-            constraints: BoxConstraints.expand(height: 15),
+            constraints: BoxConstraints.expand(height: 10),
           ),
-          preferredSize: Size(25, 25),
+          preferredSize: Size(20, 20),
         ),
         backgroundColor: Colors.grey[50],
         leading: Clock(),
@@ -72,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               "Today's Discover",
-              style: TextStyle(color: Colors.blue),
+              style: appBarTextStyle,
             ),
             AppBarDate(),
           ],

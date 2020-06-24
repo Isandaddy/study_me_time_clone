@@ -43,3 +43,7 @@ study01
 ## 20200622
 
 - unsplash API사용 fetch_api와 model_state수정
+
+## 20200624
+
+- constant.dart 추가 스타일 정리 screen3 기본정리

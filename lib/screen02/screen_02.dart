@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:study01/constant/constant.dart';
 import 'package:study01/model/info.dart';
 import 'package:study01/model/model_state.dart';
 
@@ -32,15 +33,11 @@ class Screen02 extends StatelessWidget {
       children: <Widget>[
         Text(
           'country: ${info.location.country}',
-          style: TextStyle(
-            fontSize: 25,
-          ),
+          style: screenTextStyle,
         ),
         Text(
           'description: ${info.description}',
-          style: TextStyle(
-            fontSize: 25,
-          ),
+          style: screenTextStyle,
         ),
         Text(
           'city: ${info.location.city}',
