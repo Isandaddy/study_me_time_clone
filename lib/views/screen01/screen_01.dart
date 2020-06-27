@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:study01/constant/constant.dart';
+import 'package:provider/provider.dart';
+//import 'package:study01/model/info.dart';
+import 'package:study01/model/model_state.dart';
 import './swipe_card.dart';
-//import 'match_card/match_card.dart';
 
+// ignore: must_be_immutable
 class Screen01 extends StatelessWidget {
+  Widget cardList;
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -29,13 +34,22 @@ class Screen01 extends StatelessWidget {
                       ))
                 ],
               )),
-          Positioned(
-            top: 100,
-            child: Draggable(
-              childWhenDragging: Container(),
-              feedback: SwipeCard(),
-              child: SwipeCard(),
-            ),
+          context.watch<ModelState>().when(
+            (infos) {
+              for (var i = 0; i < infos.length; i++) {
+                final info = infos[i];
+                cardList = Positioned(
+                  top: 100,
+                  child: Draggable(
+                    childWhenDragging: Container(),
+                    feedback: swipeCard(info.urls.small),
+                    child: swipeCard(info.urls.small),
+                  ),
+                );
+              }
+              return cardList;
+            },
+            loading: () => const Center(child: CircularProgressIndicator()),
           ),
         ],
       ),

@@ -36,7 +36,8 @@ class _$InfoTearOff {
       Exif exif,
       Location location,
       int views,
-      int downloads}) {
+      int downloads,
+      bool selected = false}) {
     return InfoData(
       id: id,
       createdAt: createdAt,
@@ -59,6 +60,7 @@ class _$InfoTearOff {
       location: location,
       views: views,
       downloads: downloads,
+      selected: selected,
     );
   }
 }
@@ -88,6 +90,7 @@ mixin _$Info {
   Location get location;
   int get views;
   int get downloads;
+  bool get selected;
 
   Map<String, dynamic> toJson();
   $InfoCopyWith<Info> get copyWith;
@@ -117,7 +120,8 @@ abstract class $InfoCopyWith<$Res> {
       Exif exif,
       Location location,
       int views,
-      int downloads});
+      int downloads,
+      bool selected});
 }
 
 class _$InfoCopyWithImpl<$Res> implements $InfoCopyWith<$Res> {
@@ -150,6 +154,7 @@ class _$InfoCopyWithImpl<$Res> implements $InfoCopyWith<$Res> {
     Object location = freezed,
     Object views = freezed,
     Object downloads = freezed,
+    Object selected = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
@@ -185,6 +190,7 @@ class _$InfoCopyWithImpl<$Res> implements $InfoCopyWith<$Res> {
       location: location == freezed ? _value.location : location as Location,
       views: views == freezed ? _value.views : views as int,
       downloads: downloads == freezed ? _value.downloads : downloads as int,
+      selected: selected == freezed ? _value.selected : selected as bool,
     ));
   }
 }
@@ -214,7 +220,8 @@ abstract class $InfoDataCopyWith<$Res> implements $InfoCopyWith<$Res> {
       Exif exif,
       Location location,
       int views,
-      int downloads});
+      int downloads,
+      bool selected});
 }
 
 class _$InfoDataCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res>
@@ -248,6 +255,7 @@ class _$InfoDataCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res>
     Object location = freezed,
     Object views = freezed,
     Object downloads = freezed,
+    Object selected = freezed,
   }) {
     return _then(InfoData(
       id: id == freezed ? _value.id : id as String,
@@ -283,6 +291,7 @@ class _$InfoDataCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res>
       location: location == freezed ? _value.location : location as Location,
       views: views == freezed ? _value.views : views as int,
       downloads: downloads == freezed ? _value.downloads : downloads as int,
+      selected: selected == freezed ? _value.selected : selected as bool,
     ));
   }
 }
@@ -310,7 +319,9 @@ class _$InfoData with DiagnosticableTreeMixin implements InfoData {
       this.exif,
       this.location,
       this.views,
-      this.downloads});
+      this.downloads,
+      this.selected = false})
+      : assert(selected != null);
 
   factory _$InfoData.fromJson(Map<String, dynamic> json) =>
       _$_$InfoDataFromJson(json);
@@ -357,10 +368,13 @@ class _$InfoData with DiagnosticableTreeMixin implements InfoData {
   final int views;
   @override
   final int downloads;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool selected;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Info(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, promotedAt: $promotedAt, width: $width, height: $height, color: $color, description: $description, altDescription: $altDescription, urls: $urls, links: $links, categories: $categories, likes: $likes, likedByUser: $likedByUser, currentUserCollections: $currentUserCollections, sponsorship: $sponsorship, user: $user, exif: $exif, location: $location, views: $views, downloads: $downloads)';
+    return 'Info(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, promotedAt: $promotedAt, width: $width, height: $height, color: $color, description: $description, altDescription: $altDescription, urls: $urls, links: $links, categories: $categories, likes: $likes, likedByUser: $likedByUser, currentUserCollections: $currentUserCollections, sponsorship: $sponsorship, user: $user, exif: $exif, location: $location, views: $views, downloads: $downloads, selected: $selected)';
   }
 
   @override
@@ -389,7 +403,8 @@ class _$InfoData with DiagnosticableTreeMixin implements InfoData {
       ..add(DiagnosticsProperty('exif', exif))
       ..add(DiagnosticsProperty('location', location))
       ..add(DiagnosticsProperty('views', views))
-      ..add(DiagnosticsProperty('downloads', downloads));
+      ..add(DiagnosticsProperty('downloads', downloads))
+      ..add(DiagnosticsProperty('selected', selected));
   }
 
   @override
@@ -448,7 +463,10 @@ class _$InfoData with DiagnosticableTreeMixin implements InfoData {
                 const DeepCollectionEquality().equals(other.views, views)) &&
             (identical(other.downloads, downloads) ||
                 const DeepCollectionEquality()
-                    .equals(other.downloads, downloads)));
+                    .equals(other.downloads, downloads)) &&
+            (identical(other.selected, selected) ||
+                const DeepCollectionEquality()
+                    .equals(other.selected, selected)));
   }
 
   @override
@@ -474,7 +492,8 @@ class _$InfoData with DiagnosticableTreeMixin implements InfoData {
       const DeepCollectionEquality().hash(exif) ^
       const DeepCollectionEquality().hash(location) ^
       const DeepCollectionEquality().hash(views) ^
-      const DeepCollectionEquality().hash(downloads);
+      const DeepCollectionEquality().hash(downloads) ^
+      const DeepCollectionEquality().hash(selected);
 
   @override
   $InfoDataCopyWith<InfoData> get copyWith =>
@@ -508,7 +527,8 @@ abstract class InfoData implements Info {
       Exif exif,
       Location location,
       int views,
-      int downloads}) = _$InfoData;
+      int downloads,
+      bool selected}) = _$InfoData;
 
   factory InfoData.fromJson(Map<String, dynamic> json) = _$InfoData.fromJson;
 
@@ -554,6 +574,8 @@ abstract class InfoData implements Info {
   int get views;
   @override
   int get downloads;
+  @override
+  bool get selected;
   @override
   $InfoDataCopyWith<InfoData> get copyWith;
 }

@@ -47,3 +47,8 @@ study01
 ## 20200624
 
 - constant.dart 추가 스타일 정리 screen3 기본정리
+
+## 20200626 20200627
+
+- 디렉토리 구성 screen01수정
+- 스터디 LocalStograge

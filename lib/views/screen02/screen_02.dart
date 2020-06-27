@@ -7,10 +7,6 @@ import 'package:study01/model/model_state.dart';
 class Screen02 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //final infos =
-    //    context.select<ModelState, List<Info>>((state) => state.infos);
-    //final infos = Provider.of<ModelState>(context, listen: false);
-    //print(infos);
     return context.watch<ModelState>().when(
       //ModelStateData
       (infos) {

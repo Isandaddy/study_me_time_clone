@@ -28,6 +28,7 @@ abstract class Info with _$Info {
     Location location,
     int views,
     int downloads,
+    @Default(false) bool selected,
   }) = InfoData;
 
   factory Info.fromJson(Map<String, dynamic> json) => _$InfoFromJson(json);

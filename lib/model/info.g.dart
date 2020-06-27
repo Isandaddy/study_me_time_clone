@@ -45,6 +45,7 @@ _$InfoData _$_$InfoDataFromJson(Map<String, dynamic> json) {
         : Location.fromJson(json['location'] as Map<String, dynamic>),
     views: json['views'] as int,
     downloads: json['downloads'] as int,
+    selected: json['selected'] as bool ?? false,
   );
 }
 
@@ -71,4 +72,5 @@ Map<String, dynamic> _$_$InfoDataToJson(_$InfoData instance) =>
       'location': instance.location,
       'views': instance.views,
       'downloads': instance.downloads,
+      'selected': instance.selected,
     };

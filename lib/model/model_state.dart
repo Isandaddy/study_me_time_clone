@@ -25,7 +25,6 @@ class ModelController extends StateNotifier<ModelState> with LocatorMixin {
     infoFuture = await fetchApi();
     //print(infoFuture);
 
-    //test용 moc
     state = ModelState(infos: infoFuture);
   }
 }

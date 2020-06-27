@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'constant/constant.dart';
+import 'package:study01/constant/constant.dart';
 
 class Screen03 extends StatelessWidget {
   @override
