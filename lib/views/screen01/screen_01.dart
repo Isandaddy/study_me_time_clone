@@ -12,51 +12,96 @@ class Screen01 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: context.watch<ModelState>().when(
+    return Column(children: <Widget>[
+      context.watch<ModelState>().when(
         (infos) {
           for (var i = 0; i < infos.length; i++) {
             final info = infos[i];
-            cardList = Stack(
-              alignment: Alignment.center,
-              children: <Widget>[
-                Positioned(
-                    top: 10,
-                    left: 10,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        Text(
-                          info.location.country ?? 'there is not information.',
-                          style: screenTextStyle,
-                        ),
-                        Text(info.description ?? 'there is not information.',
-                            style: screenTextStyle),
-                        Text(
-                            '---> ${info.location.city}' ??
+            cardList = Flexible(
+              flex: 5,
+              child: Stack(
+                alignment: Alignment.center,
+                children: <Widget>[
+                  Positioned(
+                      top: 10,
+                      left: 10,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Text(
+                            info.location.country ??
                                 'there is not information.',
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontSize: 15,
-                            ))
-                      ],
-                    )),
-                Positioned(
-                  top: 100,
-                  child: Draggable(
-                    childWhenDragging: Container(),
-                    feedback: swipeCard(info.urls.small),
-                    child: swipeCard(info.urls.small),
+                            style: screenTextStyle,
+                          ),
+                          Text(info.description ?? 'there is not information.',
+                              style: screenTextStyle),
+                          Text(
+                              '---> ${info.location.city}' ??
+                                  'there is not information.',
+                              style: TextStyle(
+                                color: Colors.blue,
+                                fontSize: 15,
+                              ))
+                        ],
+                      )),
+                  Positioned(
+                    top: 100,
+                    child: Draggable(
+                      childWhenDragging: Container(),
+                      feedback: swipeCard(info.urls.small),
+                      child: swipeCard(info.urls.small),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             );
           }
           return cardList;
         },
         loading: () => screen01LoadingSpin(),
       ),
-    );
+      Container(
+        width: 250,
+        height: 40,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Icon(
+              Icons.navigate_before,
+              color: selectLeftColor,
+            ),
+            Icon(
+              Icons.sentiment_dissatisfied,
+              color: selectLeftColor,
+            ),
+            Text(
+              'NOPE',
+              style: TextStyle(color: selectLeftColor),
+            ),
+            Text('|'),
+            Text(
+              'LIKE',
+              style: TextStyle(color: selectRightColor),
+            ),
+            Icon(
+              Icons.sentiment_very_satisfied,
+              color: selectRightColor,
+            ),
+            Icon(
+              Icons.navigate_next,
+              color: selectRightColor,
+            ),
+          ],
+        ),
+      ),
+      SizedBox(
+        height: 20,
+      )
+    ]);
   }
 }

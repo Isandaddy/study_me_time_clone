@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 //Colors
 const appBarColor = Colors.blue;
+const selectLeftColor = Colors.pink;
+const selectRightColor = Colors.green;
 
 // Text Style
 const appBarDateStyle = TextStyle(fontSize: 15, color: appBarColor);
