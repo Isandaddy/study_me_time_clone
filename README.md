@@ -52,3 +52,8 @@ study01
 
 - 디렉토리 구성 screen01수정
 - 스터디 LocalStograge
+
+## 20200627
+
+- screen01수정 데이터를 받아오는 곳을 Stack전체로 잡아줌
+- screen01의 Loading화면 구성 https://pub.dev/packages/flutter_spinkit#-readme-tab- 사용
