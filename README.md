@@ -57,3 +57,7 @@ study01
 
 - screen01수정 데이터를 받아오는 곳을 Stack전체로 잡아줌
 - screen01의 Loading화면 구성 https://pub.dev/packages/flutter_spinkit#-readme-tab- 사용
+
+## 20200630 20200701
+
+- edit screen01 텍스트 미표기 ㅜㅜ
