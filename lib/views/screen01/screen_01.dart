@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-//import 'package:study01/constant/constant.dart';
 import 'package:provider/provider.dart';
-import 'package:study01/model/info.dart';
+//import 'package:study01/model/info.dart';
 import 'package:study01/model/model_state.dart';
 import 'package:study01/widgets/screen01_loading_spin.dart';
 import 'package:study01/widgets/screen01_select_btn.dart';
-import '../../widgets/swipe_card.dart';
+import 'package:study01/widgets/get_match_card.dart';
 
-// ignore: must_be_immutable
 class Screen01 extends StatelessWidget {
   Widget cardList;
-  List<Info> cards;
+  //List<Info> cards;
 
   @override
   Widget build(BuildContext context) {
@@ -22,42 +20,8 @@ class Screen01 extends StatelessWidget {
             cardList = Flexible(
               flex: 5,
               child: Stack(
-                  alignment: Alignment.center, children: _getMatchCard(infos[i])
-
-                  // <Widget>[
-                  //   Positioned(
-                  //       top: 10,
-                  //       left: 10,
-                  //       child: Column(
-                  //         crossAxisAlignment: CrossAxisAlignment.start,
-                  //         //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  //         children: <Widget>[
-                  //           Text(
-                  //             info.location.country ??
-                  //                 'there is not information.',
-                  //             style: screenTextStyle,
-                  //           ),
-                  //           Text(info.description ?? 'there is not information.',
-                  //               style: screenTextStyle),
-                  //           Text(
-                  //               '---> ${info.location.city}' ??
-                  //                   'there is not information.',
-                  //               style: TextStyle(
-                  //                 color: Colors.blue,
-                  //                 fontSize: 15,
-                  //               ))
-                  //         ],
-                  //       )),
-                  //   Positioned(
-                  //     top: 100,
-                  //     child: Draggable(
-                  //       childWhenDragging: Container(),
-                  //       feedback: swipeCard(info.urls.small),
-                  //       child: swipeCard(info.urls.small),
-                  //     ),
-                  //   ),
-                  // ],
-                  ),
+                  alignment: Alignment.center,
+                  children: getMatchCard(infos[i], context)),
             );
           }
           return cardList;
@@ -69,19 +33,5 @@ class Screen01 extends StatelessWidget {
         height: 20,
       )
     ]);
-  }
-
-  List<Widget> _getMatchCard(Info info) {
-    List<Widget> infoCards = new List();
-    infoCards.add(Positioned(
-      top: 100,
-      child: Draggable(
-        childWhenDragging: Container(),
-        feedback: swipeCard(info.urls.small),
-        child: swipeCard(info.urls.small),
-      ),
-    ));
-
-    return infoCards;
   }
 }

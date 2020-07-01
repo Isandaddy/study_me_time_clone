@@ -61,3 +61,8 @@ study01
 ## 20200630 20200701
 
 - edit screen01 텍스트 미표기 ㅜㅜ
+
+## 20200702
+
+- edit screen01/ add widget
+- toggle로 state변화 줬는데 음...onDragEnd로 인한 rerandering이 안되고 있음..

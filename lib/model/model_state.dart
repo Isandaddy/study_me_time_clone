@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:state_notifier/state_notifier.dart';
 import 'package:study01/api/fetch_api.dart';
 import 'package:study01/model/info.dart';
+import 'package:study01/model/selected_model.dart';
 
 part 'model_state.freezed.dart';
 
@@ -26,5 +27,25 @@ class ModelController extends StateNotifier<ModelState> with LocatorMixin {
     //print(infoFuture);
 
     state = ModelState(infos: infoFuture);
+  }
+
+  void toggle(Info info) {
+    print('in toggle');
+    final currentState = state;
+    if (currentState is ModelStateData) {
+      final selectedCard = currentState.infos.map((t) {
+        if (t == info) {
+          return t.copyWith(
+            selected: !t.selected,
+          );
+        }
+        return t;
+      }).toList();
+      state = ModelState(infos: selectedCard);
+      //selected card가 들어갈 모델
+      SelectedModel(
+        infos: selectedCard,
+      );
+    }
   }
 }
