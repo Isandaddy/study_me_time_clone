@@ -66,3 +66,8 @@ study01
 
 - edit screen01/ add widget
 - toggle로 state변화 줬는데 음...onDragEnd로 인한 rerandering이 안되고 있음..
+
+## 20200704
+
+- screen01의 사진 좌우 스와이프 상태에서 onDragEnd의 \_removeCard시점에서의 에러
+- RangeError (index): Invalid value: Not in range 0..8, inclusive: 9
